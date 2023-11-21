@@ -10,4 +10,6 @@ This is a sample application to demonstrate a custom/configurable layout dashboa
 * ~~Create-React-App~~
 * ~~Setup React-Grid-Layout Library~~
 * ~~Make it work~~
+* Grid Item Handles!!!
 * Define Page and Component Hierarchy
+* ~~Page Styling~~

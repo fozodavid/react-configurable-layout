@@ -1,8 +1,9 @@
 import React from "react";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
-import { BASIC_LAYOUT } from "./consts";
-import type { Layout } from './types';
+import type { Layout } from "react-grid-layout";
+import { BASIC_LAYOUT } from "../consts";
+import "./Basic.css";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -33,7 +34,7 @@ const Basic: React.FC<IBasic> = (props) => {
   }
 
   return (
-    <div>
+    <div className="main">
       <ReactGridLayout
         layout={layout}
         onLayoutChange={onLayoutChange}
