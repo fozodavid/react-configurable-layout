@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dashboard }  from 'pages';
+import { socket } from 'socket';
 import './App.css';
 
 const defaultProps = {
@@ -12,6 +13,14 @@ const defaultProps = {
 
 
 function App() {
+
+  React.useEffect(() => {
+    socket.on('connect', () => {
+      console.log('connected');
+    })
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">Real-Time Configurable Dashboard</header>
