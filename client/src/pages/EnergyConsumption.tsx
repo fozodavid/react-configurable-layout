@@ -1,18 +1,19 @@
 import React from 'react'
-import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
+import './EnergyConsumption.css'
 import {
   Chart as ChartJS,
+  Title,
   Tooltip,
   CategoryScale,
-  ChartData,
   LinearScale,
   PointElement,
   LineElement,
 } from "chart.js";
 
 ChartJS.register(
+  Title,
   CategoryScale,
   LinearScale,
   PointElement,
@@ -66,23 +67,24 @@ export const EnergyConsumption = () => {
               backgroundColor: ["#f71734"],
               borderColor: "#f71734",
               borderWidth: 1,
-              pointHitRadius: 1,
-              pointBorderWidth: 1,
-              animation: {
-                duration: 0
-              },
-
             },
           ],
         }}
         options={{
+          maintainAspectRatio: false,
+          responsive: true,
+          animation: false,
           plugins: {
             title: {
               display: true,
               text: "Energy Consumption",
+              font: {
+                family: "Roboto",
+                size: 20,
+              }
             },
             legend: {
-              display: false
+              display: true
             },
           }
         }}
