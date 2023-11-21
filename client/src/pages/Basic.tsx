@@ -2,6 +2,8 @@ import React from "react";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 import { BASIC_LAYOUT } from "../consts";
 import "./Basic.css";
 
@@ -26,7 +28,7 @@ const Basic: React.FC<IBasic> = (props) => {
   const generateDOM = () => {
     return _.map(_.range(props.items || 0), function(i) {
       return (
-        <div style={{border: "1px solid black"}}key={i}>
+        <div className="chart" key={i}>
           <span className="text">{i}</span>
         </div>
       );

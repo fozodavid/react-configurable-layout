@@ -6,7 +6,6 @@ export const BASIC_LAYOUT: Layout[] = [{
     w: 4,
     h: 3,
     i: "0",
-    resizeHandles: ['se'],
 },
 {
     x: 4,
