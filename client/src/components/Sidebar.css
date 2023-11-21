@@ -1,0 +1,12 @@
+.App-aside {
+  grid-area: aside;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+}

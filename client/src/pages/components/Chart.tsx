@@ -87,6 +87,14 @@ const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
           maintainAspectRatio: false,
           responsive: true,
           animation: false,
+          elements: {
+            line: {
+              tension: 0.8,
+            },
+            point: {
+              radius: 0
+            }
+          },
           plugins: {
             title: {
               display: true,

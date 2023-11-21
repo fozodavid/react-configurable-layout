@@ -2,12 +2,14 @@
   display: grid;
   height: 100vh;
   text-align: center;
-  grid-template-columns: 12em 1fr;
-  grid-template-rows: 4em 1fr;
+  grid-template-columns: 18em 1fr;
+  grid-template-rows: 4em 4em 1fr;
+  background-color: var(--base);
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header header"
+    "aside header"
+    "aside toolbar"
     "aside main";
 }
 
@@ -21,32 +23,7 @@
   }
 }
 
-.App-header {
-  grid-area: header;
-  background-color: var(--primary);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 1em;
-  justify-content: flex-start;
-  font-size: 1.5em;
-  font-family: monospace;
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
 
-.App-aside {
-  grid-area: aside;
-  width: 100%;
-  min-height: 100%;
-  background-color: var(--secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
-}

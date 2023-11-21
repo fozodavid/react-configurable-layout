@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dashboard }  from 'pages';
 import { useSocket } from 'socket';
+import { Header, Sidebar, Toolbar } from 'components';
 import './App.css';
 
 const defaultProps = {
@@ -23,8 +24,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Real-Time Configurable Dashboard</header>
-      <aside className="App-aside" />
+      <Header />
+      <Toolbar />
+      <Sidebar />
       <Dashboard {...defaultProps} />
     </div>
   );
