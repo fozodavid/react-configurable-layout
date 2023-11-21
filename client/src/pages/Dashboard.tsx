@@ -1,11 +1,11 @@
 import React from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
+import { BASIC_LAYOUT } from "consts";
+import { Chart } from "./components";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import { BASIC_LAYOUT } from "consts";
 import "./Dashboard.css";
-import { Chart } from "./Chart";
 
 const ReactGridLayout = WidthProvider(RGL);
 

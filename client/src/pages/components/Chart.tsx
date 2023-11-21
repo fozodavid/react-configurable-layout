@@ -2,6 +2,7 @@ import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
 import './Chart.css'
+import type { EventName } from 'types'
 import {
   Chart as ChartJS,
   Title,
@@ -23,10 +24,10 @@ ChartJS.register(
 
 interface IChart {
   title: string;
-  eventName: string;
+  eventName: EventName;
   color?: string;
 }
-export const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
+const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
   const socket = useSocket();
 
   const [data, setData] = React.useState<number[]>([]);
@@ -104,3 +105,5 @@ export const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
     </div>
   );
 }
+
+export default Chart;

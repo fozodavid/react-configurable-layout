@@ -15,6 +15,7 @@
 * Advanced Dashboard Styling
 * API folder organization
 * Integration Tests
+* types module export fix
 
 ## Server
 
