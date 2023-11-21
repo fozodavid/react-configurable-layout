@@ -6,7 +6,7 @@
 * ~~Setup React-Grid-Layout Library~~
 * ~~Make it work~~
 * ~~Grid Item Handles!!!~~
-* Connect to single Socket
+* ~~Connect to single Socket~~
 * Connect to multiple data streams
 * ~~Define Page and Component Hierarchy~~
 * ~~Basic Page Styling~~

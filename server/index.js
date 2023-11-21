@@ -19,7 +19,7 @@ io.on('connection', (socket) => {
     const randomValue = Math.floor(Math.random() * 100);
     // counter += 1
     socket.emit('energyConsumption', randomValue);
-  }, 1000);
+  }, 500);
 
   socket.on('disconnect', () => {
     console.log('User disconnected');

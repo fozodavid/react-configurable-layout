@@ -22,49 +22,59 @@ ChartJS.register(
 
 export const EnergyConsumption = () => {
   const socket = useSocket();
-  const [chartData, setChartData] = React.useState<ChartData<'line'>>({
-    labels: ["1", "2", "3", "4", "5"],
-    datasets: [
-      {
-        label: "Energy Consumption",
-        data: [20,21,22],
-        backgroundColor: ["black"],
-        borderColor: "cyan",
-        borderWidth: 3,
-      },
-    ],
-  })
+
+  const [data, setData] = React.useState<number[]>([]);
+  const [labels, setLabels] = React.useState<string[]>([]);
 
   React.useEffect(() => {
     if (socket) {
       socket.on('energyConsumption', (consumption: number) => {
+        setLabels(prev => {
+          const newLabels = [...prev]
+          if (newLabels.length >= 30) {
+            newLabels.shift()
+          }
+          newLabels.push(new Date().getSeconds().toString())
+          return newLabels
+        })
 
-        setChartData(prev => {
-          const newData = [...prev.datasets[0].data]
+        setData(prev => {
+          const newData = [...prev]
 
-          if (newData.length >= 5) {
+          if (newData.length >= 30) {
             newData.shift()
           }
           newData.push(consumption)
-
-          const newDataset = {
-            ...prev.datasets[0],
-            data: newData
-          }
-
-          return ({
-            ...prev,
-            datasets: [newDataset]
-          })
+          return newData
         })
       })
     }
   }, [socket])
 
+  const key=labels.join('')
+
   return (
     <div className="chart-container">
       <Line
-        data={chartData}
+        key={key}
+        data={{
+          labels,
+          datasets: [
+            {
+              label: "Energy Consumption",
+              data,
+              backgroundColor: ["#f71734"],
+              borderColor: "#f71734",
+              borderWidth: 1,
+              pointHitRadius: 1,
+              pointBorderWidth: 1,
+              animation: {
+                duration: 0
+              },
+
+            },
+          ],
+        }}
         options={{
           plugins: {
             title: {
