@@ -2,21 +2,35 @@ import React from 'react'
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
-import {CategoryScale, ChartData} from 'chart.js'; 
+import {
+  Chart as ChartJS,
+  Tooltip,
+  CategoryScale,
+  ChartData,
+  LinearScale,
+  PointElement,
+  LineElement,
+} from "chart.js";
 
-Chart.register(CategoryScale);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip
+);
 
 export const EnergyConsumption = () => {
   const socket = useSocket();
   const [chartData, setChartData] = React.useState<ChartData<'line'>>({
-    labels: [],
+    labels: ["1", "2", "3", "4", "5"],
     datasets: [
       {
         label: "Energy Consumption",
-        data: [],
+        data: [20,21,22],
         backgroundColor: ["black"],
         borderColor: "cyan",
-        borderWidth: 4,
+        borderWidth: 3,
       },
     ],
   })
@@ -43,7 +57,6 @@ export const EnergyConsumption = () => {
             datasets: [newDataset]
           })
         })
-
       })
     }
   }, [socket])
