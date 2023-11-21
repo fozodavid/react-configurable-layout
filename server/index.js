@@ -12,13 +12,21 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log('A user connected');
-  // let counter = 0
 
   // Simulate data streaming (replace this with your data source)
   setInterval(() => {
-    const randomValue = Math.floor(Math.random() * 100);
-    // counter += 1
+    const randomValue = Math.floor(Math.random() * 15) + 50;
     socket.emit('energyConsumption', randomValue);
+  }, 500);
+
+  setInterval(() => {
+    const randomValue = Math.floor(Math.random() * 30) + 50;
+    socket.emit('throughput', randomValue);
+  }, 500);
+
+  setInterval(() => {
+    const randomValue = Math.floor(Math.random() * 20) + 80;
+    socket.emit('grindingEfficiency', randomValue);
   }, 500);
 
   socket.on('disconnect', () => {

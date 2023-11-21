@@ -1,7 +1,7 @@
 import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
-import './EnergyConsumption.css'
+import './Chart.css'
 import {
   Chart as ChartJS,
   Title,
@@ -21,7 +21,12 @@ ChartJS.register(
   Tooltip
 );
 
-export const EnergyConsumption = () => {
+interface IChart {
+  title: string;
+  eventName: string;
+  color?: string;
+}
+export const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
   const socket = useSocket();
 
   const [data, setData] = React.useState<number[]>([]);
@@ -29,7 +34,7 @@ export const EnergyConsumption = () => {
 
   React.useEffect(() => {
     if (socket) {
-      socket.on('energyConsumption', (consumption: number) => {
+      socket.on(eventName, (consumption: number) => {
         setLabels(prev => {
           const newLabels = [...prev]
           if (newLabels.length >= 30) {
@@ -52,32 +57,39 @@ export const EnergyConsumption = () => {
     }
   }, [socket])
 
-  const key=labels.join('')
+  const memoizedColor = React.useMemo(() => {
+    return color || "#f71734"
+  }, [color])
 
   return (
     <div className="chart-container">
       <Line
-        key={key}
         data={{
           labels,
           datasets: [
             {
-              label: "Energy Consumption",
+              label: title,
               data,
-              backgroundColor: ["#f71734"],
-              borderColor: "#f71734",
+              backgroundColor: memoizedColor,
+              borderColor: memoizedColor,
               borderWidth: 1,
             },
           ],
         }}
         options={{
+          scales: {
+            y: {
+              suggestedMin: 0,
+              suggestedMax: 100,
+            }
+          },
           maintainAspectRatio: false,
           responsive: true,
           animation: false,
           plugins: {
             title: {
               display: true,
-              text: "Energy Consumption",
+              text: title,
               font: {
                 family: "Roboto",
                 size: 20,

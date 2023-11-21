@@ -4,7 +4,6 @@ import { useSocket } from 'socket';
 import './App.css';
 
 const defaultProps = {
-  className: "layout",
   items: 3,
   rowHeight: 20,
   onLayoutChange: function () { },

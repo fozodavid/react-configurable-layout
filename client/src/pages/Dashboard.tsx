@@ -1,12 +1,11 @@
 import React from "react";
-import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import { BASIC_LAYOUT } from "consts";
 import "./Dashboard.css";
-import { EnergyConsumption } from "./EnergyConsumption";
+import { Chart } from "./Chart";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -26,11 +25,6 @@ const Dashboard: React.FC<IDashboard> = (props) => {
     setLayout(layout);
   }
 
-  const generateDOM = () => {
-    return [
-    ]
-  }
-
   return (
     <div className="main">
       <ReactGridLayout
@@ -39,13 +33,24 @@ const Dashboard: React.FC<IDashboard> = (props) => {
         {...props}
       >
         <div className="chart" key="0">
-          <EnergyConsumption />
+          <Chart 
+            title="Energy Consumption"
+            eventName="energyConsumption"
+          />
         </div>
         <div className="chart" key="1">
-          <span className="text">1</span>
+          <Chart 
+            title="Throughput"
+            eventName="throughput"
+            color="darkgreen"
+          />
         </div>
         <div className="chart" key="2">
-          <span className="text">2</span>
+          <Chart 
+            title="Grinding Efficiency"
+            eventName="grindingEfficiency"
+            color="black"
+          />
         </div>
       </ReactGridLayout>
     </div>

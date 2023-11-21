@@ -10,15 +10,16 @@
 * ~~Basic Page Styling~~
 * ~~Connect to single Socket~~
 * ~~Chart Styling~~
-* Connect to multiple data streams
+* ~~Connect to multiple data streams~~
 * Drag Handle
 * Advanced Dashboard Styling
+* API folder organization
 * Integration Tests
 
 ## Server
 
-* Real-Time Data Server
+* ~~Real-Time Data Server~~
   * ~~Single Datastream~~
-  * Multi Datastream
+  * ~~Multi Datastream~~
 * Switch to TypeScript
 * Tests
