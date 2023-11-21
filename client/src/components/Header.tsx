@@ -15,6 +15,7 @@ const Header: React.FC = () => {
             </nav>
             <div className="header__right">
                 <i className="bi bi-bell-fill"></i>
+                <i className="bi bi-gear"></i>
                 <div style={{display: 'flex', alignItems: 'center'}}>
                     <img height={40} width={40} src={Profile} alt="profile" className="profile-picture" />
                     <small style={{marginLeft: '0.4em', fontSize: 14}}>Juana F.</small>
