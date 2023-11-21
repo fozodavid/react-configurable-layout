@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dashboard }  from 'pages';
-import { socket } from 'socket';
+import { useSocket } from 'socket';
 import './App.css';
 
 const defaultProps = {
@@ -14,12 +14,13 @@ const defaultProps = {
 
 function App() {
 
+  const socket = useSocket();
+
   React.useEffect(() => {
-    socket.on('connect', () => {
+    socket?.on('connect', () => {
       console.log('connected');
     })
   }, []);
-
 
   return (
     <div className="App">

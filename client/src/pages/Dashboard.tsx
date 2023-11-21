@@ -6,6 +6,7 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import { BASIC_LAYOUT } from "consts";
 import "./Dashboard.css";
+import { EnergyConsumption } from "./EnergyConsumption";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -26,13 +27,8 @@ const Dashboard: React.FC<IDashboard> = (props) => {
   }
 
   const generateDOM = () => {
-    return _.map(_.range(props.items || 0), function(i) {
-      return (
-        <div className="chart" key={i}>
-          <span className="text">{i}</span>
-        </div>
-      );
-    });
+    return [
+    ]
   }
 
   return (
@@ -42,7 +38,15 @@ const Dashboard: React.FC<IDashboard> = (props) => {
         onLayoutChange={onLayoutChange}
         {...props}
       >
-        {generateDOM()}
+        <div className="chart" key="0">
+          <EnergyConsumption />
+        </div>
+        <div className="chart" key="1">
+          <span className="text">1</span>
+        </div>
+        <div className="chart" key="2">
+          <span className="text">2</span>
+        </div>
       </ReactGridLayout>
     </div>
   );
