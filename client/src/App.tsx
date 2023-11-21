@@ -1,6 +1,6 @@
 import React from 'react';
+import { Dashboard }  from 'pages';
 import './App.css';
-import Basic from './pages/Basic';
 
 const defaultProps = {
   className: "layout",
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">Real-Time Configurable Dashboard</header>
       <aside className="App-aside" />
-      <Basic {...defaultProps} />
+      <Dashboard {...defaultProps} />
     </div>
   );
 }

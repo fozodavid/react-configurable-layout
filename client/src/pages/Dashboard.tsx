@@ -4,12 +4,12 @@ import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import { BASIC_LAYOUT } from "../consts";
-import "./Basic.css";
+import { BASIC_LAYOUT } from "consts";
+import "./Dashboard.css";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-interface IBasic {
+interface IDashboard {
   className?: string;
   items?: number;
   rowHeight?: number;
@@ -17,7 +17,7 @@ interface IBasic {
   cols?: number;
 }
 
-const Basic: React.FC<IBasic> = (props) => {
+const Dashboard: React.FC<IDashboard> = (props) => {
 
   const [ layout, setLayout ] = React.useState<Layout[]>(BASIC_LAYOUT);
 
@@ -49,9 +49,4 @@ const Basic: React.FC<IBasic> = (props) => {
 
 }
 
-export default Basic;
-/*
-if (process.env.STATIC_EXAMPLES === true) {
-  import("../test-hook.jsx").then(fn => fn.default(BasicLayout));
-}
-*/
+export default Dashboard;
