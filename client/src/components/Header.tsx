@@ -7,7 +7,7 @@ const Header: React.FC = () => {
         <header className="App-header">
             <nav className="header__left">
                 <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                    <input id="search-input" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                     <button className='btn'>
                         <i className="bi bi-search"></i>
                     </button>

@@ -28,3 +28,7 @@
 .header__right img {
   border-radius: 50%;
 }
+
+#search-input {
+  width: 40rem;
+}

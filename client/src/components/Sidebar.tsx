@@ -1,10 +1,12 @@
 import React from 'react';
 import Logo from 'assets/imgs/logo.png'
+import {ReactComponent as News} from 'assets/imgs/news.svg'
 import './Sidebar.css'
 
 const Sidebar: React.FC = () => {
   return (
     <nav className="sidebar">
+      <div>
       <div className='logo-container'>
         <img src={Logo} width={40} />
         <span>OPTIMIZER</span>
@@ -41,6 +43,12 @@ const Sidebar: React.FC = () => {
           </a>
         </li>
       </ul>
+      </div>
+      <News className="sidebar__news" />
+      <div style={{position: 'absolute', zIndex: 7, bottom: '4rem', left: '2rem', color: 'black'}}>
+        <p className='h2'>What's New?</p>
+        <p style={{color: 'var(--accent)'}}>-Release Notes v0.2.3</p>
+      </div>
     </nav>
   )
 }
