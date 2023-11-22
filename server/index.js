@@ -4,11 +4,9 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server, { cors: { origin: '*'}});
+require('dotenv').config();
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+const io = socketIo(server, { cors: { origin: process.env.ALLOWED_ORIGIN}});
 
 io.on('connection', (socket) => {
   console.log('A user connected');

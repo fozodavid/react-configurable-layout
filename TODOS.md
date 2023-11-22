@@ -12,9 +12,10 @@
 * ~~Chart Styling~~
 * ~~Connect to multiple data streams~~
 * ~~Advanced Dashboard Styling~~
-* Gradient chart style
+* ~~Define environmental variables~~
 * Bug: Socket connects multiple times
 * Deploy to Netlify
+* Gradient chart style
 * API folder organization
 * Components/Pages reorganization
 * Remove Inline Styles
@@ -28,5 +29,5 @@
   * ~~Single Datastream~~
   * ~~Multi Datastream~~
 * Switch to TypeScript
-* Deploy to Server
+* ~~Deploy to Server~~
 * Tests
