@@ -14,6 +14,7 @@
 * Drag Handle
 * Advanced Dashboard Styling
 * API folder organization
+* Bug: Socket connects multiple times
 * Integration Tests
 * types module export fix
 

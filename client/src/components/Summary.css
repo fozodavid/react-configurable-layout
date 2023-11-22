@@ -1,0 +1,29 @@
+.summary {
+    position: relative;
+}
+
+.summary__title {
+    font-size: 1.8rem;
+}
+
+.summary__value {
+    font-size: 2.8rem;
+    display: block;
+}
+
+.summary .bi {
+    margin: 0 0.5rem;
+}
+
+.positive {
+    color: var(--green);
+}
+
+.negative {
+    color: var(--accent);
+}
+
+.compact {
+    display: inline;
+    margin: 0 0.5rem;
+}

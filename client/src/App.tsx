@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dashboard }  from 'pages';
 import { useSocket } from 'socket';
-import { Header, Sidebar, Toolbar } from 'components';
+import { Header, Sidebar, Toolbar, Chat } from 'components';
 import './App.css';
 
 const defaultProps = {
@@ -27,6 +27,7 @@ function App() {
       <Header />
       <Toolbar />
       <Sidebar />
+      <Chat />
       <Dashboard {...defaultProps} />
     </div>
   );

@@ -2,3 +2,17 @@
     grid-area: main;
     background-color: var(--base);
 }
+
+.grid-item {
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+
+.featured-chart {
+    padding: 2rem;
+    background-color: #acebfd;
+    border-radius: 10px;
+}

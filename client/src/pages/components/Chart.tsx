@@ -71,6 +71,8 @@ const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
             {
               label: title,
               data,
+              fill: true,
+              stepped: true,
               backgroundColor: memoizedColor,
               borderColor: memoizedColor,
               borderWidth: 1,
@@ -82,15 +84,15 @@ const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
             y: {
               suggestedMin: 0,
               suggestedMax: 100,
-            }
+            },
+            x: {
+              display: false,
+            },
           },
           maintainAspectRatio: false,
           responsive: true,
           animation: false,
           elements: {
-            line: {
-              tension: 0.8,
-            },
             point: {
               radius: 0
             }
