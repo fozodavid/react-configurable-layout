@@ -1,13 +1,6 @@
 import type { Layout } from 'react-grid-layout'
 
-export const DEFAULT_GRID_LAYOUT = {
-  className: "layout",
-  items: 3,
-  rowHeight: 20,
-  margin: [20, 20],
-  onLayoutChange: function () { },
-  cols: 12,
-}
+export const MAX_DATA_POINTS = 30;
 
 export const BASIC_LAYOUT: Layout[] = [{
     x: 0,

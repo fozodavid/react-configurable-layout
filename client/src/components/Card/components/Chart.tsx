@@ -12,6 +12,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
+import { MAX_DATA_POINTS } from 'consts';
 
 ChartJS.register(
   Filler,
@@ -33,7 +34,7 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
       socket.on(eventName, (dataPoint: number) => {
         setLabels(prev => {
           const newLabels = [...prev]
-          if (newLabels.length >= 30) {
+          if (newLabels.length >= MAX_DATA_POINTS) {
             newLabels.shift()
           }
           newLabels.push(new Date().getSeconds().toString())
@@ -43,7 +44,7 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
         setData(prev => {
           const newData = [...prev]
 
-          if (newData.length >= 30) {
+          if (newData.length >= MAX_DATA_POINTS) {
             newData.shift()
           }
           newData.push(dataPoint)
@@ -68,18 +69,19 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
               {
                 label: '',
                 data,
-                stepped: true,
+                stepped: false,
                 fill: true,
+                tension: 0.4,
                 backgroundColor: memoizedColor + (opacity || '30'),
                 borderColor: memoizedColor,
-                borderWidth: 1,
+                borderWidth: 3,
               },
             ],
           }}
           options={{
             scales: {
               y: {
-                suggestedMin: 0,
+                suggestedMin: 40,
                 suggestedMax: 100,
               },
               x: {

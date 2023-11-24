@@ -40,7 +40,8 @@
 
 ## Milestones
 1. Configurable Layout Real Time Data Web Application
-- Code is Clean and Tested
+- ~~Code is Clean~~
+- Code Tested
 - Detailed Readme file
 
 2. Layout Configuration Tool

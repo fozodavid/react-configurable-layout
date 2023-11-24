@@ -6,24 +6,28 @@ const app = express();
 const server = http.createServer(app);
 require('dotenv').config();
 
-const io = socketIo(server, { cors: { origin: process.env.ALLOWED_ORIGIN}});
+const io = socketIo(server, { cors: { origin: process.env.ALLOWED_ORIGINS}});
 
-io.on('connection', (socket) => {
+io
+  .on('connection', (socket) => {
   console.log('A user connected');
+  let counter = 0.0
 
-  // Simulate data streaming (replace this with your data source)
   setInterval(() => {
-    const randomValue = Math.floor(Math.random() * 15) + 50;
+    counter += .2;
+    const randomValue = Math.sin(counter) * 30 + 50;
     socket.emit('energyConsumption', randomValue);
   }, 500);
 
   setInterval(() => {
-    const randomValue = Math.floor(Math.random() * 30) + 50;
+    counter += .2;
+    const randomValue = Math.sin(counter) * 25;
     socket.emit('throughput', randomValue);
   }, 500);
 
   setInterval(() => {
-    const randomValue = Math.floor(Math.random() * 20) + 80;
+    counter += .2;
+    const randomValue = Math.sin(counter) * 20 + 60;
     socket.emit('grindingEfficiency', randomValue);
   }, 500);
 

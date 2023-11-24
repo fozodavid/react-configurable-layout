@@ -18,6 +18,7 @@ const ReactGridLayout = WidthProvider(RGL);
 interface IDashboard {
   rowHeight?: number;
   cols?: number;
+  margin?: [number, number];
 }
 
 const Dashboard: React.FC<IDashboard> = (props) => {

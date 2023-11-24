@@ -2,19 +2,19 @@
   {
     "id": "0",
     "eventName": "energyConsumption",
-    "color": "#008040",
-    "opacity": "60"
+    "color": "#05a657",
+    "opacity": "30"
   },
   {
     "id": "1",
     "eventName": "throughput",
-    "color": "#000000",
-    "opacity": "60"
+    "color": "#f71734",
+    "opacity": "30"
   },
   {
     "id": "2",
     "eventName": "grindingEfficiency",
-    "color": "#000000",
-    "opacity": "60"
+    "color": "#05a657",
+    "opacity": "30"
   }
 ]
