@@ -7,10 +7,15 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import "./Dashboard.css";
 
+import { FeaturedCard } from 'components'
+import restData from 'data/restData.json'
+import dashBoardConfig from 'data/dashboardConfig.json'
+import layoutConfig from 'data/layoutConfig.json'
+
+
 const ReactGridLayout = WidthProvider(RGL);
 
 interface IDashboard {
-  items?: number;
   rowHeight?: number;
   cols?: number;
 }
@@ -23,6 +28,11 @@ const Dashboard: React.FC<IDashboard> = (props) => {
   }
 
   const generateDOM = () => {
+
+    console.log(layoutConfig.map((item) => {
+      item.i = item.i.toString()
+    }))
+
     return [
         <div className="featured-chart" key="0">
           <Summary 
@@ -105,7 +115,6 @@ const Dashboard: React.FC<IDashboard> = (props) => {
 }
 
 Dashboard.defaultProps = {
-  items: 3,
   rowHeight: 20,
   cols: 12,
 };
