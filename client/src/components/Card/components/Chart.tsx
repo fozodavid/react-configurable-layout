@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
 import './Chart.css'
-import type { EventName } from 'types'
+import type { IChart } from 'types'
 import {
   Chart as ChartJS,
   Filler,
@@ -22,11 +22,6 @@ ChartJS.register(
   Tooltip
 );
 
-interface IChart {
-  eventName: EventName;
-  color?: string // hex value
-  opacity?: string // 2 digit hex value
-}
 const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
   const socket = useSocket();
 
@@ -35,7 +30,7 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
 
   React.useEffect(() => {
     if (socket) {
-      socket.on(eventName, (consumption: number) => {
+      socket.on(eventName, (dataPoint: number) => {
         setLabels(prev => {
           const newLabels = [...prev]
           if (newLabels.length >= 30) {
@@ -51,7 +46,7 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
           if (newData.length >= 30) {
             newData.shift()
           }
-          newData.push(consumption)
+          newData.push(dataPoint)
           return newData
         })
       })
@@ -64,46 +59,49 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
 
   return (
     <div className="chart-container">
-      <Line
-        data={{
-          labels,
-          datasets: [
-            {
-              label: '',
-              data,
-              stepped: true,
-              fill: true,
-              backgroundColor: memoizedColor + (opacity || '30'),
-              borderColor: memoizedColor,
-              borderWidth: 1,
+      {!data.length && (<p className='h3'>No data</p>)}
+      {!!data.length && (
+        <Line
+          data={{
+            labels,
+            datasets: [
+              {
+                label: '',
+                data,
+                stepped: true,
+                fill: true,
+                backgroundColor: memoizedColor + (opacity || '30'),
+                borderColor: memoizedColor,
+                borderWidth: 1,
+              },
+            ],
+          }}
+          options={{
+            scales: {
+              y: {
+                suggestedMin: 0,
+                suggestedMax: 100,
+              },
+              x: {
+                display: false,
+              },
             },
-          ],
-        }}
-        options={{
-          scales: {
-            y: {
-              suggestedMin: 0,
-              suggestedMax: 100,
+            maintainAspectRatio: false,
+            responsive: true,
+            animation: false,
+            elements: {
+              point: {
+                radius: 0
+              }
             },
-            x: {
-              display: false,
-            },
-          },
-          maintainAspectRatio: false,
-          responsive: true,
-          animation: false,
-          elements: {
-            point: {
-              radius: 0
+            plugins: {
+              legend: {
+                display: true
+              },
             }
-          },
-          plugins: {
-            legend: {
-              display: true
-            },
-          }
-        }}
-      />
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -1,18 +1,25 @@
 import React from "react";
+import type { ISummary, IChart } from 'types';
+import Summary from "./components/Summary";
+import Chart from './components/Chart';
 import OptionsButton from "./components/OptionsButton";
+import './Card.css';
 
 
 interface ICard {
-    children: React.ReactNode;
+    summaryProps: ISummary;
+    chartProps?: IChart;
+    featured?: boolean;
 }
 
-const Card: React.FC<ICard> = ({ children }) => {
+const Card: React.FC<ICard> = ({ summaryProps, chartProps, featured }) => {
     return (
-        <div className="card">
+        <div className={`grid-item ${featured && 'featured'}`}>
             <OptionsButton />
-            {children}
+            <Summary {...summaryProps } />
+            {chartProps && <Chart  {...chartProps} />}
         </div>
     )
-}
+};
 
 export default Card;

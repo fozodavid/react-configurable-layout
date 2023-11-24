@@ -1,13 +1,6 @@
 import React from 'react'
+import type { ISummary } from 'types';
 import './Summary.css'
-
-interface ISummary {
-    title: string;
-    value: string;
-    timeframe: string;
-    change: number;
-    compact?: boolean;
-}
 
 const Summary: React.FC<ISummary> = ({ title, value, timeframe, change, compact }) => {
     return (
