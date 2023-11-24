@@ -1,0 +1,5 @@
+.options-button {
+    position: absolute;
+    top: var(--normal-gap);
+    right: var(--normal-gap);
+}

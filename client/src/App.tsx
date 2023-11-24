@@ -2,7 +2,7 @@ import React from 'react';
 import { Dashboard }  from 'pages';
 import { useSocket } from 'socket';
 import { Header, Sidebar, Toolbar, Chat } from 'components';
-import './App.css';
+import AppStyles from './App.module.css';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className={AppStyles.app}>
       <Header />
       <Toolbar />
       <Sidebar />

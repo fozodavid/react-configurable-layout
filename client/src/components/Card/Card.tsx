@@ -1,9 +1,10 @@
 import React from "react";
 import type { ISummary, IChart } from 'types';
+import classNames from 'classnames';
 import Summary from "./components/Summary";
 import Chart from './components/Chart';
 import OptionsButton from "./components/OptionsButton";
-import './Card.css';
+import CardStyles from './Card.module.css';
 
 
 interface ICard {
@@ -14,7 +15,7 @@ interface ICard {
 
 const Card: React.FC<ICard> = ({ summaryProps, chartProps, featured }) => {
     return (
-        <div className={`grid-item ${featured && 'featured'}`}>
+        <div className={classNames(CardStyles.card, featured && CardStyles.featured)}>
             <OptionsButton />
             <Summary {...summaryProps } />
             {chartProps && <Chart  {...chartProps} />}

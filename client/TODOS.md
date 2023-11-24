@@ -3,19 +3,32 @@
 ## Priorities
 
 ### Must Do
-* ~~Chart Styling Fill Fix~~
-* Use CSS Modules / CSS Optimization / Remove Inline Styles
-* Components/Pages reorganization
+* ~~Create-React-App~~
+* ~~Setup React-Grid-Layout Library~~
+* ~~Make it work~~
+* ~~Define Page and Component Hierarchy~~
+* ~~Grid Item Resize Handles!!!~~
+* ~~Basic Page Styling~~
+* ~~Connect to single Socket~~
+* ~~Chart Styling~~
+* ~~Connect to multiple data streams~~
+* ~~Components/Pages reorganization~~
+* ~~Use CSS Modules / CSS Optimization / Remove Inline Styles~~
+  * ~~SVG fix~~
 * Integration Tests
 
 ### Should Do
-* Dashboard Configuration Render
+* ~~Define environmental variables~~
+* ~~Advanced Dashboard Styling~~
+* ~~Dashboard Configuration Render~~
 * Not implemented toast
 * API folder organization
 * Install Prettier
 
 ### Could Do
+* ~~Chart Styling Fill Fix~~
 * Bug: Socket connects multiple times / Socket as Context
+* Multiple Themes
 * Error Boundaries
 * Drag Handles
 * Implement Router

@@ -1,0 +1,64 @@
+.sidebar {
+  grid-area: aside;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--icon-size);
+  color: var(--text-primary);
+}
+
+.nav-link {
+  color: var(--text-light);
+}
+
+.logo-container {
+  display: flex;
+  height: 8rem;
+  align-items: center;
+  justify-content: center;
+  font-family: Aileron, sans-serif;
+  font-size: 2rem;
+}
+
+.logo-container img {
+  filter:brightness(200%);
+}
+
+.sidebar span {
+  margin-left: var(--small-gap);
+}
+
+.sidebar i {
+  color: var(--text-primary);
+}
+
+.news-graphic {
+  transform: scaleX(101%);
+}
+
+.news-graphic path:nth-of-type(1) {
+  fill: var(--secondary) !important;
+}
+
+.news-graphic path:nth-of-type(2) {
+  fill: var(--accent) !important;
+}
+
+.news-graphic path:nth-of-type(3) {
+  fill: var(--base-strong) !important;
+}
+
+
+.news-text {
+  position: absolute;
+  z-index: 7;
+  bottom: 4rem;
+  left: 2rem;
+  color: var(--text-dark);
+}
+
+.news-text mark {
+  color: var(--accent);
+}

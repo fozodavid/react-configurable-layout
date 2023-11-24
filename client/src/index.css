@@ -1,10 +1,26 @@
 :root {
   --primary: #0a1128;
-  --secondary: #e8f9fd;
+  --secondary: #00bcc4;
   --base: #f5f8fb;
-  --base-dark: #fceff9;
-  --accent: #f71734;
+  --base-strong: #ffffff;
+  --accent: #ff434f;
+  
+  --secondary-light: #acebfd;
+  
+  --small-gap: 0.5rem;
+  --normal-gap: 1rem;
+  
+  --text-primary: #ffffff;
+  --text-light: #eaedf2;
+  --text-dark: #000000;
+  --text-warning: #f71734;
+  --text-success: var(--green);
   --green: #05a657;
+
+  --icon-size: 1.5rem;
+  --icon-size-lg: 2rem;
+  --icon-size-xl: 2.5rem;
+
 }
 
 @font-face {

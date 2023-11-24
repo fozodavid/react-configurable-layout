@@ -1,19 +1,19 @@
 import React from 'react';
-import './Header.css'
+import HeaderStyles from './Header.module.css'
 import Profile from 'assets/imgs/profile-picture-3.jpg'
 
 const Header: React.FC = () => {
     return (
-        <header className="App-header">
-            <nav className="header__left">
+        <header className={HeaderStyles.header}>
+            <nav>
                 <form className="form-inline my-2 my-lg-0">
-                    <input id="search-input" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                    <input className={`${HeaderStyles.search} form-control mr-sm-2`} type="search" placeholder="Search" aria-label="Search" />
                     <button className='btn'>
                         <i className="bi bi-search"></i>
                     </button>
                 </form>
             </nav>
-            <div className="header__right">
+            <div className={HeaderStyles.right}>
                 <i className="bi bi-bell-fill"></i>
                 <i className="bi bi-gear"></i>
                 <div style={{display: 'flex', alignItems: 'center'}}>

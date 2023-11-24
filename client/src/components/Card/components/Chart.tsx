@@ -1,7 +1,7 @@
 import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
-import './Chart.css'
+import ChartStyles from './Chart.module.css'
 import type { IChart } from 'types'
 import {
   Chart as ChartJS,
@@ -58,7 +58,7 @@ const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
   }, [color])
 
   return (
-    <div className="chart-container">
+    <div className={ChartStyles["chart-container"]}>
       {!data.length && (<p className='h3'>No data</p>)}
       {!!data.length && (
         <Line

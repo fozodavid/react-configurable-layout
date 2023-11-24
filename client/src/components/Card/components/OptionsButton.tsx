@@ -1,8 +1,10 @@
 import React from "react";
+import OptionsButtonStyles from './OptionsButton.module.css';
+import classNames from "classnames";
 
 const OptionsButton: React.FC = () => {
     return (
-        <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
+        <i className={classNames(OptionsButtonStyles["options-button"], "bi bi-three-dots-vertical")}></i>
     )
 };
 

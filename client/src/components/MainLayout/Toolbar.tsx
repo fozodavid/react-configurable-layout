@@ -1,13 +1,13 @@
 import React from 'react';
-import './Toolbar.css'
+import ToolbarStyles from './Toolbar.module.css'
 
 const Toolbar: React.FC = () => {
     return (
-        <div className="toolbar">
+        <div className={ToolbarStyles.toolbar}>
             <div>
                 <button className='btn btn-light'>
                     <i className="bi bi-plus-square-fill"></i>
-                    <span style={{marginLeft: '0.2em'}}> New Task </span>
+                    <span> New Task </span>
                 </button>
             </div>
 

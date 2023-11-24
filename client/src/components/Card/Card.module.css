@@ -1,0 +1,11 @@
+.card {
+    height: 100%;
+    padding: var(--normal-gap);
+    background-color: var(--base-strong);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.featured {
+    background-color: var(--secondary-light);
+}

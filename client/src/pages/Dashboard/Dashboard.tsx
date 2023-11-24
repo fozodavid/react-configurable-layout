@@ -6,7 +6,7 @@ import { ISummary, IChart, IChartConfig, ILayoutConfig } from 'types';
 import { Card } from 'components'
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import "./Dashboard.css";
+import DashboardStyles from "./Dashboard.module.css";
 
 import chartConfig from 'data/chartConfig.json'
 import summaryData from 'data/summaryData.json'
@@ -51,7 +51,7 @@ const Dashboard: React.FC<IDashboard> = (props) => {
   }
 
   return (
-    <div className="main">
+    <div className={DashboardStyles.main}>
       <ReactGridLayout
         layout={layout}
         onLayoutChange={onLayoutChange}
