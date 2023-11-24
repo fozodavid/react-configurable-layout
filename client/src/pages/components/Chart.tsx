@@ -2,10 +2,11 @@ import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
 import './Chart.css'
-import type { EventName } from 'types'
+import type { EventName, HexaDecimalDigit as H } from 'types'
 import {
   Chart as ChartJS,
   Title,
+  Filler,
   Tooltip,
   CategoryScale,
   LinearScale,
@@ -15,6 +16,7 @@ import {
 
 ChartJS.register(
   Title,
+  Filler,
   CategoryScale,
   LinearScale,
   PointElement,
@@ -25,9 +27,10 @@ ChartJS.register(
 interface IChart {
   title: string;
   eventName: EventName;
-  color?: string;
+  color?: string // hex value
+  opacity?: string // 2 digit hex value
 }
-const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
+const Chart: React.FC<IChart> = ({ title, eventName, color, opacity }) => {
   const socket = useSocket();
 
   const [data, setData] = React.useState<number[]>([]);
@@ -71,9 +74,9 @@ const Chart: React.FC<IChart> = ({ title, eventName, color }) => {
             {
               label: title,
               data,
-              fill: true,
               stepped: true,
-              backgroundColor: memoizedColor,
+              fill: true,
+              backgroundColor: memoizedColor + (opacity || '30'),
               borderColor: memoizedColor,
               borderWidth: 1,
             },

@@ -44,6 +44,8 @@ const Dashboard: React.FC<IDashboard> = (props) => {
           <Chart 
             title=""
             eventName="energyConsumption"
+            color="#008040"
+            opacity="60"
           />
         </div>
         <div className="grid-item" key="1">
@@ -58,7 +60,8 @@ const Dashboard: React.FC<IDashboard> = (props) => {
           <Chart 
             title=""
             eventName="throughput"
-            color="darkgreen"
+            color="#000000"
+            opacity="60"
           />
         </div>
         <div className="grid-item" key="2">
@@ -73,7 +76,7 @@ const Dashboard: React.FC<IDashboard> = (props) => {
           <Chart 
             title=""
             eventName="grindingEfficiency"
-            color="black"
+            color="#000000"
           />
         </div>
         <div className="grid-item" key="3">
