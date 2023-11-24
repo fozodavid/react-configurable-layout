@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from "react-chartjs-2";
 import { useSocket } from 'socket'
 import './Chart.css'
-import type { EventName, HexaDecimalDigit as H } from 'types'
+import type { EventName } from 'types'
 import {
   Chart as ChartJS,
   Title,

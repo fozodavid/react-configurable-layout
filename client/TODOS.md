@@ -3,8 +3,7 @@
 ## Priorities
 
 ### Must Do
-* Fix Gradient chart style
-* Chart Styling Fill Fix
+* ~~Chart Styling Fill Fix~~
 * Components/Pages reorganization
 * Integration Tests
 
