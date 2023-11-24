@@ -4,13 +4,6 @@ import { useSocket } from 'socket';
 import { Header, Sidebar, Toolbar, Chat } from 'components';
 import './App.css';
 
-const defaultProps = {
-  items: 3,
-  rowHeight: 20,
-  onLayoutChange: function () { },
-  cols: 12,
-};
-
 
 function App() {
 
@@ -28,7 +21,7 @@ function App() {
       <Toolbar />
       <Sidebar />
       <Chat />
-      <Dashboard {...defaultProps} />
+      <Dashboard />
     </div>
   );
 }

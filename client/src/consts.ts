@@ -44,8 +44,4 @@ export const BASIC_LAYOUT: Layout[] = [{
     h: 6,
     i: "4",
 },
-
-
-
-
 ]

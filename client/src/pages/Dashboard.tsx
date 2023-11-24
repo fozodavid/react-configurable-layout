@@ -2,8 +2,7 @@ import React from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
 import { BASIC_LAYOUT } from "consts";
-import { Chart } from "./components";
-import { Summary } from 'components'
+import { Summary, Chart } from 'components'
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import "./Dashboard.css";
@@ -11,28 +10,20 @@ import "./Dashboard.css";
 const ReactGridLayout = WidthProvider(RGL);
 
 interface IDashboard {
-  className?: string;
   items?: number;
   rowHeight?: number;
-  onLayoutChange?: (layout: any) => void;
   cols?: number;
 }
 
 const Dashboard: React.FC<IDashboard> = (props) => {
-
   const [ layout, setLayout ] = React.useState<Layout[]>(BASIC_LAYOUT);
 
   const onLayoutChange = (layout) => {
     setLayout(layout);
   }
 
-  return (
-    <div className="main">
-      <ReactGridLayout
-        layout={layout}
-        onLayoutChange={onLayoutChange}
-        {...props}
-      >
+  const generateDOM = () => {
+    return [
         <div className="featured-chart" key="0">
           <Summary 
             title="Energy Consumption"
@@ -40,14 +31,13 @@ const Dashboard: React.FC<IDashboard> = (props) => {
             change={5.58}
             timeframe="Last Week"
           />
-          <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
           <Chart 
-            title=""
             eventName="energyConsumption"
             color="#008040"
             opacity="60"
           />
         </div>
+        ,
         <div className="grid-item" key="1">
           <Summary 
             compact
@@ -58,12 +48,12 @@ const Dashboard: React.FC<IDashboard> = (props) => {
           />
           <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
           <Chart 
-            title=""
             eventName="throughput"
             color="#000000"
             opacity="60"
           />
-        </div>
+        </div>,
+
         <div className="grid-item" key="2">
           <Summary
             compact
@@ -74,11 +64,11 @@ const Dashboard: React.FC<IDashboard> = (props) => {
           />
           <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
           <Chart 
-            title=""
             eventName="grindingEfficiency"
             color="#000000"
           />
         </div>
+        ,
         <div className="grid-item" key="3">
           <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
           <Summary
@@ -88,6 +78,7 @@ const Dashboard: React.FC<IDashboard> = (props) => {
             timeframe="Last Week"
           />
         </div>
+        ,
         <div className="grid-item" key="4">
           <i style={{position: 'absolute', top: '1rem', right: '1rem'}}className="bi bi-three-dots-vertical"></i>
           <Summary
@@ -97,10 +88,26 @@ const Dashboard: React.FC<IDashboard> = (props) => {
             timeframe="Last Month"
           />
         </div>
+    ]
+  }
+
+  return (
+    <div className="main">
+      <ReactGridLayout
+        layout={layout}
+        onLayoutChange={onLayoutChange}
+        {...props}
+      >
+        {generateDOM()}
       </ReactGridLayout>
     </div>
   );
-
 }
+
+Dashboard.defaultProps = {
+  items: 3,
+  rowHeight: 20,
+  cols: 12,
+};
 
 export default Dashboard;

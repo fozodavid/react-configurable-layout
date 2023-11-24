@@ -1,0 +1,37 @@
+[
+    {
+        "id": "0",
+        "codename": "energy",
+        "value": "8,684 kWh",
+        "change": 5.58,
+        "timeframe": "Last Week"
+    },
+    {
+        "id": "1",
+        "codename": "throughput",
+        "value": "6,483 Tonnes",
+        "change": -2.83,
+        "timeframe": "Last Week"
+    },
+    {
+        "id": "2",
+        "codename": "grindingEfficiency",
+        "value": "75.2%",
+        "change": 1.91,
+        "timeframe": "Last Week"
+    },
+    {
+        "id": "3",
+        "codename": "savedEnergy",
+        "value": "1,471 kWh",
+        "change": 3.01,
+        "timeframe": "Last Week"
+    },
+    {
+        "id": "4",
+        "codename": "cashSaved",
+        "value": "$14,811,000",
+        "change": 2.74,
+        "timeframe": "Last Month"
+    }
+]

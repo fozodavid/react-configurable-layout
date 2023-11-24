@@ -1,0 +1,47 @@
+[
+  {
+    "id": "0",
+    "component": "FeaturedCard",
+    "props": {
+      "title": "Energy Consumption",
+      "eventName": "energyConsumption",
+      "color": "#008040",
+      "opacity": "60"
+    }
+  },
+  {
+    "id": "1",
+    "component": "ChartCard",
+    "props": {
+      "compact": true,
+      "eventName": "throughput",
+      "title": "Thoughput",
+      "color": "#000000",
+      "opacity": "60"
+    }
+  },
+  {
+    "id": "2",
+    "component": "ChartCard",
+    "props": {
+      "compact": true,
+      "eventName": "grindingEfficiency",
+      "title": "Grinding Efficiency",
+      "color": "#000000"
+    }
+  },
+  {
+    "id": "3",
+    "component": "SummaryCard",
+    "props": {
+      "title": "Saved Energy"
+    }
+  },
+  {
+    "id": "4",
+    "component": "SummaryCard",
+    "props": {
+      "title": "Cash Saved"
+    }
+  }
+]

@@ -5,7 +5,6 @@ import './Chart.css'
 import type { EventName } from 'types'
 import {
   Chart as ChartJS,
-  Title,
   Filler,
   Tooltip,
   CategoryScale,
@@ -15,7 +14,6 @@ import {
 } from "chart.js";
 
 ChartJS.register(
-  Title,
   Filler,
   CategoryScale,
   LinearScale,
@@ -25,12 +23,11 @@ ChartJS.register(
 );
 
 interface IChart {
-  title: string;
   eventName: EventName;
   color?: string // hex value
   opacity?: string // 2 digit hex value
 }
-const Chart: React.FC<IChart> = ({ title, eventName, color, opacity }) => {
+const Chart: React.FC<IChart> = ({ eventName, color, opacity }) => {
   const socket = useSocket();
 
   const [data, setData] = React.useState<number[]>([]);
@@ -72,7 +69,7 @@ const Chart: React.FC<IChart> = ({ title, eventName, color, opacity }) => {
           labels,
           datasets: [
             {
-              label: title,
+              label: '',
               data,
               stepped: true,
               fill: true,
@@ -101,14 +98,6 @@ const Chart: React.FC<IChart> = ({ title, eventName, color, opacity }) => {
             }
           },
           plugins: {
-            title: {
-              display: true,
-              text: title,
-              font: {
-                family: "Roboto",
-                size: 20,
-              }
-            },
             legend: {
               display: true
             },

@@ -4,20 +4,22 @@
 
 ### Must Do
 * ~~Chart Styling Fill Fix~~
+* Use CSS Modules / CSS Optimization / Remove Inline Styles
 * Components/Pages reorganization
 * Integration Tests
 
 ### Should Do
 * Dashboard Configuration Render
 * Not implemented toast
-* Not implemented page
-* Use CSS Modules / CSS Optimization / Remove Inline Styles
 * API folder organization
+* Install Prettier
 
 ### Could Do
 * Bug: Socket connects multiple times / Socket as Context
 * Error Boundaries
 * Drag Handles
+* Implement Router
+    * Not implemented page
 
 ### Nice to Have
 * Types module export fix
