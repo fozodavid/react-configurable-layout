@@ -5,7 +5,7 @@ const URL = process.env.NODE_ENV !== 'development' ? process.env.REACT_APP_SOCKE
 const socketConfig =  process.env.NODE_ENV !== 'development' ? {
     path: process.env.REACT_APP_SOCKET_IO_PATH,
     autoConnect: true,
-} : {}
+} : { autoConnect: false }
 
 export const useSocket = () => {
     const [socket, setSocket] = React.useState<Socket>();

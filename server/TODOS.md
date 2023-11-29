@@ -4,5 +4,6 @@
   * ~~Single Datastream~~
   * ~~Multi Datastream~~
 * Switch to TypeScript
+* Multiple Allowed Origins
 * ~~Deploy to Server~~
 * Tests

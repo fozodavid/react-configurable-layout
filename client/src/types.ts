@@ -8,6 +8,7 @@ export type ISummary = {
     timeframe: string;
     change: number;
     compact?: boolean;
+    simulation?: boolean;
 }
 
 export type IChart = {

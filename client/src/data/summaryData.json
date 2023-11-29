@@ -1,11 +1,12 @@
 [
     {
         "id": "0",
-        "codename": "energy",
-        "title": "Energy Consumption",
-        "value": "8,684 kWh",
-        "change": 5.58,
-        "timeframe": "Last Week"
+        "codename": "stockpile",
+        "title": "Stockpile",
+        "value": "8,684,000 Tonnes",
+        "change": -2.58,
+        "timeframe": "Last Week",
+        "simulation": true
     },
     {
         "id": "1",

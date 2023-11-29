@@ -1,11 +1,5 @@
 [
   {
-    "id": "0",
-    "eventName": "energyConsumption",
-    "color": "#05a657",
-    "opacity": "30"
-  },
-  {
     "id": "1",
     "eventName": "throughput",
     "color": "#f71734",
