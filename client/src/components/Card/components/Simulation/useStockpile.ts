@@ -3,16 +3,21 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import Texture from 'assets/imgs/mineralStockpile.png';
 import Displacement from 'assets/imgs/heightMapSmall.png';
+import { NORMAL_GAP, SUMMARY_HEIGHT } from 'consts';
 
 interface IUseStockpile {
     ref: React.RefObject<HTMLCanvasElement> | null;
+    cardHeight: number;
+    cardWidth: number;
 }
 
-export const useStockpile: ({ ref }: IUseStockpile) => void = ({ ref }) => {
-
+export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => void = ({ ref, cardHeight, cardWidth }) => {
     React.useEffect(() => {
         if (!ref) return;
+        const width = cardWidth - NORMAL_GAP * 2;
+        const height = cardHeight -SUMMARY_HEIGHT - NORMAL_GAP * 4;
 
+        const canvas = ref.current as HTMLCanvasElement;
         const scene = new THREE.Scene()
         scene.background = new THREE.Color(0x0a1128)
 
@@ -22,7 +27,7 @@ export const useStockpile: ({ ref }: IUseStockpile) => void = ({ ref }) => {
 
         const camera = new THREE.PerspectiveCamera(
             75,
-            window.innerWidth / window.innerHeight,
+            width / height,
             0.1,
             1000
         )
@@ -30,9 +35,8 @@ export const useStockpile: ({ ref }: IUseStockpile) => void = ({ ref }) => {
         camera.position.y = .5
         camera.position.x = .8
 
-        const canvas = ref.current as HTMLCanvasElement;
         const renderer = new THREE.WebGLRenderer({ canvas })
-        renderer.setSize(window.innerWidth, window.innerHeight)
+        renderer.setSize(width, height)
 
         const controls = new OrbitControls(camera, renderer.domElement)
         controls.screenSpacePanning = true
@@ -53,9 +57,9 @@ export const useStockpile: ({ ref }: IUseStockpile) => void = ({ ref }) => {
 
         window.addEventListener('resize', onWindowResize, false)
         function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight
+            camera.aspect = width / height
             camera.updateProjectionMatrix()
-            renderer.setSize(window.innerWidth, window.innerHeight)
+            renderer.setSize(width, height)
             render()
         }
 
@@ -70,5 +74,7 @@ export const useStockpile: ({ ref }: IUseStockpile) => void = ({ ref }) => {
         }
 
         animate()
-    }, [ref])
+
+        return () => { scene.clear() }
+    }, [ref, cardHeight, cardWidth ])
 }

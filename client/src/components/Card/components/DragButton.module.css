@@ -1,5 +1,6 @@
-.options-button {
+.drag-button {
     position: absolute;
     top: var(--normal-gap);
     right: var(--normal-gap);
+    z-index: 7;
 }

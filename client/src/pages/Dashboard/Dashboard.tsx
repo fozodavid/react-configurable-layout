@@ -56,8 +56,8 @@ const Dashboard: React.FC<IDashboard> = (props) => {
       <ReactGridLayout
         layout={layout}
         onLayoutChange={onLayoutChange}
+        draggableHandle=".drag-button"
         {...props}
-        isDraggable={false}
       >
         {generateDOM()}
       </ReactGridLayout>

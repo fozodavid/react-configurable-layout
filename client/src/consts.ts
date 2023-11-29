@@ -2,6 +2,9 @@ import type { Layout } from 'react-grid-layout'
 
 export const MAX_DATA_POINTS = 30;
 
+export const SUMMARY_HEIGHT = 86;
+export const NORMAL_GAP = 10;
+
 export const BASIC_LAYOUT: Layout[] = [{
     x: 0,
     y: 0,

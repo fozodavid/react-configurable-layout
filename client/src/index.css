@@ -21,6 +21,8 @@
   --icon-size-lg: 2rem;
   --icon-size-xl: 2.5rem;
 
+
+  --summary-height: 86px;
 }
 
 @font-face {

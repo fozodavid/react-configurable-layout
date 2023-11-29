@@ -1,5 +1,6 @@
 .summary {
     position: relative;
+    margin: var(--small-gap) 0;
 }
 
 .title {
