@@ -3,19 +3,17 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import Texture from 'assets/imgs/mineralStockpile.png';
 import Displacement from 'assets/imgs/heightMapSmall.png';
-import { NORMAL_GAP, SUMMARY_HEIGHT } from 'consts';
 
 interface IUseStockpile {
     ref: React.RefObject<HTMLCanvasElement> | null;
-    cardHeight: number;
-    cardWidth: number;
+    height: number;
+    width: number;
 }
 
-export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => void = ({ ref, cardHeight, cardWidth }) => {
+export const useStockpile: ({ ref, height, width }: IUseStockpile) => void = ({ ref, height, width }) => {
     React.useEffect(() => {
         if (!ref) return;
-        const width = cardWidth - NORMAL_GAP * 2;
-        const height = cardHeight -SUMMARY_HEIGHT - NORMAL_GAP * 4;
+        console.log('mount')
 
         const canvas = ref.current as HTMLCanvasElement;
         const scene = new THREE.Scene()
@@ -28,8 +26,8 @@ export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => vo
         const camera = new THREE.PerspectiveCamera(
             75,
             width / height,
-            0.1,
-            1000
+            0.01,
+            10
         )
         camera.position.z = .4
         camera.position.y = .5
@@ -40,6 +38,10 @@ export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => vo
 
         const controls = new OrbitControls(camera, renderer.domElement)
         controls.screenSpacePanning = true
+        controls.autoRotate = true
+        controls.autoRotateSpeed = -0.7
+        controls.maxPolarAngle = Math.PI / 2
+        controls.minPolarAngle = 0
 
         const planeGeometry = new THREE.PlaneGeometry(1, 1, 50, 50)
 
@@ -65,7 +67,7 @@ export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => vo
 
         function animate() {
             requestAnimationFrame(animate)
-            plane.rotateZ(0.001)
+            controls.update()
             render()
         }
 
@@ -76,5 +78,5 @@ export const useStockpile: ({ ref, cardHeight, cardWidth }: IUseStockpile) => vo
         animate()
 
         return () => { scene.clear() }
-    }, [ref, cardHeight, cardWidth ])
+    }, [ref, height, width ])
 }

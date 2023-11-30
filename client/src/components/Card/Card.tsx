@@ -38,13 +38,14 @@ const Card: React.FC<ICard> = ({ summaryProps, chartProps, featured }) => {
       }
     }, []);
 
+
     return (
         <div ref={cardRef} className={classNames(CardStyles.card, featured && CardStyles.featured)}>
             <DragButton />
             <Summary {...summaryProps } />
             {chartProps && <Chart  {...chartProps} />}
             {summaryProps.simulation && <Simulation
-              cardHeight={ height|| 150 }
+              cardHeight={ height || 150 }
               cardWidth={ width || 150 }
             />}
         </div>

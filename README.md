@@ -3,7 +3,7 @@
 ## Overview
 This is a sample application to demonstrate a dynamically changeable layout dashboard with real-time data display using Socket.io.
 
-As a bonus it also demonstrates scalable folder structures in React and rapid ui prototyping with Bootstrap.
+As a bonus it also demonstrates scalable folder structures in React and rapid ui prototyping with Bootstrap. Also an interactive 3D widget created with three.js.
 
 ## Usage
 Drag the Cards to change the layout, use the bottom left handler to resize.

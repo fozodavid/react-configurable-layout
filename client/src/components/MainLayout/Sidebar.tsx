@@ -55,7 +55,7 @@ const Sidebar: React.FC = () => {
         <LogoContainer />
         <ul className="nav">
           {sideBarLinks.map((link, index) => (
-            <li className="nav-item">
+            <li key={link.text} className="nav-item">
               <a className={SidebarStyles["nav-link"]} href="#">
                 <i className={link.icon}></i>
                 <span>{link.text}</span>

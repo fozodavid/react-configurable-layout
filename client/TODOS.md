@@ -21,6 +21,7 @@
 * ~~Define environmental variables~~
 * ~~Advanced Dashboard Styling~~
 * ~~Dashboard Configuration Render~~
+* Sidebar Style Bug: Convert to Fixed Position
 * Not implemented toast
 * API folder organization
 * Install Prettier
@@ -30,13 +31,19 @@
 * Bug: Socket connects multiple times / Socket as Context
 * Multiple Themes
 * Error Boundaries
-* Drag Handles
+* ~~Drag Handles~~
+* Summary Icons
 * Implement Router
     * Not implemented page
+* Responsive Design
+* Simulation Updates
+* More Cards
 
 ### Nice to Have
 * Types module export fix
 * Implement HOC or Render Props
+* Card width and height information as context
+* FEM Simulation Animation Card
 
 ## Milestones
 1. Configurable Layout Real Time Data Web Application
@@ -51,4 +58,4 @@
 - Authorization mechanism implemented
 - Host on Personal Domain
 
-3. 3D Visualization Card
+3. ~~3D Visualization Card~~
