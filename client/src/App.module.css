@@ -1,13 +1,7 @@
 .app {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 18em 1fr;
-  grid-template-rows: 4em 4em 1fr;
   background-color: var(--base);
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "aside header"
-    "aside toolbar"
-    "aside main";
+}
+
+.container {
+  margin-left: 26rem;
 }

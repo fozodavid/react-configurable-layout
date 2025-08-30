@@ -17,11 +17,13 @@ function App() {
 
   return (
     <div className={AppStyles.app}>
-      <Header />
-      <Toolbar />
       <Sidebar />
       <Chat />
-      <Dashboard />
+      <div className={AppStyles.container}>
+        <Header />
+        <Toolbar />
+        <Dashboard />
+      </div>
     </div>
   );
 }

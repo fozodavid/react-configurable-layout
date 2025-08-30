@@ -1,11 +1,11 @@
 .chat {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--primary);
-    bottom: 1rem;
-    right: 2rem;
+    bottom: 2rem;
+    right: 2.5rem;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;

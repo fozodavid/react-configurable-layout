@@ -1,12 +1,17 @@
 .sidebar {
-  grid-area: aside;
+  position: fixed;
+  top: 0;
+
   background-color: var(--primary);
   display: flex;
+  width: 26rem;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-size: var(--icon-size);
   color: var(--text-primary);
+  z-index: 6;
 }
 
 .nav-link {
@@ -35,7 +40,7 @@
 }
 
 .news-graphic {
-  transform: scaleX(101%);
+  transform: scaleX(104%);
 }
 
 .news-graphic path:nth-of-type(1) {
