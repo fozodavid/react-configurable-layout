@@ -13,7 +13,6 @@ interface IUseStockpile {
 export const useStockpile: ({ ref, height, width }: IUseStockpile) => void = ({ ref, height, width }) => {
     React.useEffect(() => {
         if (!ref) return;
-        console.log('mount')
 
         const canvas = ref.current as HTMLCanvasElement;
         const scene = new THREE.Scene()
@@ -29,9 +28,9 @@ export const useStockpile: ({ ref, height, width }: IUseStockpile) => void = ({ 
             0.01,
             10
         )
-        camera.position.z = .4
-        camera.position.y = .5
-        camera.position.x = .8
+        camera.position.z = .2
+        camera.position.y = .25
+        camera.position.x = .4
 
         const renderer = new THREE.WebGLRenderer({ canvas })
         renderer.setSize(width, height)

@@ -1,7 +1,6 @@
 import React from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import type { Layout } from "react-grid-layout";
-import { BASIC_LAYOUT } from "consts";
 import { ISummary, IChart, IChartConfig, ILayoutConfig } from 'types';
 import { Card } from 'components'
 import "react-grid-layout/css/styles.css";
@@ -22,7 +21,7 @@ interface IDashboard {
 }
 
 const Dashboard: React.FC<IDashboard> = (props) => {
-  const [ layout, setLayout ] = React.useState<Layout[]>(BASIC_LAYOUT);
+  const [ layout, setLayout ] = React.useState<Layout[]>(layoutConfig);
 
   const onLayoutChange = (layout) => {
     setLayout(layout);
@@ -66,8 +65,8 @@ const Dashboard: React.FC<IDashboard> = (props) => {
 }
 
 Dashboard.defaultProps = {
-  rowHeight: 20,
-  cols: 12,
+  rowHeight: 120,
+  cols: 4,
 };
 
 export default Dashboard;
